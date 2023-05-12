@@ -1,9 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-todo-task',
   templateUrl: './todo-task.component.html',
-  styleUrls: ['./todo-task.component.css']
+  styleUrls: ['./todo-task.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class TodoTaskComponent {
   @Input()
@@ -22,5 +24,9 @@ export class TodoTaskComponent {
 
   done(task: string) {
     this.emitDone.emit(task)
+  }
+
+  getColor(): string{
+return this.tasksList.length >=5? 'red': 'green'
   }
 }
