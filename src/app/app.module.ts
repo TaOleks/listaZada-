@@ -3,16 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Klikacz1Component } from './klikacz1/klikacz1.component';
+import { Klikacz2Component } from './klikacz2/klikacz2.component';
+import { ClickService } from './services/click.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Klikacz1Component,
+    Klikacz2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ClickService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
