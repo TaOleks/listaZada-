@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { Klikacz1Component } from './klikacz1/klikacz1.component';
 import { Klikacz2Component } from './klikacz2/klikacz2.component';
 import { ClickService } from './services/click.service';
+import { LogService } from './services/log.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ClickService } from './services/click.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ClickService],
+  providers: [ClickService, LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
