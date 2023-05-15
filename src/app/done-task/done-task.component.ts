@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-done-task',
@@ -6,6 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./done-task.component.css']
 })
 export class DoneTaskComponent {
- @Input()
+
  tasksDone: Array<string>= [];
+
+ constructor(private tasksService: TasksService){
+  this.tasksService.getTasksDoneObs().subscribe((tasks: Array<string> )=> {
+    this.tasksDone = tasks;
+  })
+ }
 }
