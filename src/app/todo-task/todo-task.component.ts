@@ -1,6 +1,7 @@
 
 import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { TasksService } from '../services/tasks.service';
+import { Task } from '../models/tasks';
 
 @Component({
   selector: 'app-todo-task',
@@ -10,20 +11,20 @@ import { TasksService } from '../services/tasks.service';
 })
 export class TodoTaskComponent {
 
-  tasksList: Array<string> = [];
+  tasksList: Array<Task> = [];
 
 
   constructor(private tasksService:TasksService){
-    this.tasksService.getTasksListObs().subscribe((tasks:Array<string>)=>{
+    this.tasksService.getTasksListObs().subscribe((tasks:Array<Task>)=>{
       this.tasksList = tasks;
     })
   }
 
-  remove(task: string) {
+  remove(task: Task) {
    this.tasksService.remove(task)
   }
 
-  done(task: string) {
+  done(task: Task) {
     this.tasksService.done(task)
   }
 
