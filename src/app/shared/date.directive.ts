@@ -6,7 +6,7 @@ import { Directive, HostListener, Input } from '@angular/core';
 export class DateDirective {
 
 @Input()
-private date:Date;
+ public date:Date|undefined;
 
 constructor() { }
 @HostListener('mouseenter')
