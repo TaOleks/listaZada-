@@ -14,7 +14,7 @@ this.paragraph= this.renderer.createElement('p')
 }
 @HostListener('mouseenter')
 mouseenter(eventDate:Event){
-this.paragraph.innerHTML = this.date?.toLocaleDateString()
+this.paragraph.innerHTML = this.date?.toLocaleString()
 this.renderer.appendChild(this.el.nativeElement,this.paragraph)
 }
 
